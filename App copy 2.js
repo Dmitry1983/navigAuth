@@ -1,9 +1,8 @@
-import * as React from 'react';
-import { View, Text, Button } from 'react-native';
-import { NavigationContainer, useIsFocused } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import { AuthContext } from "./src/Context";
 import {
@@ -17,13 +16,8 @@ import {
   Splash
 } from "./src/Screens";
 
-const Tabs = createBottomTabNavigator();
-const HomeStack = createStackNavigator();
-const SearchStack = createStackNavigator();
+
 const AuthStack = createStackNavigator();
-const ProfileStack = createStackNavigator();
-
-
 const AuthStackScreen = () => (
   <AuthStack.Navigator>
     <AuthStack.Screen
@@ -39,7 +33,9 @@ const AuthStackScreen = () => (
   </AuthStack.Navigator>
 );
 
-
+const Tabs = createBottomTabNavigator();
+const HomeStack = createStackNavigator();
+const SearchStack = createStackNavigator();
 
 const HomeStackScreen = () => (
   <HomeStack.Navigator>
@@ -61,7 +57,7 @@ const SearchStackScreen = () => (
   </SearchStack.Navigator>
 );
 
-
+const ProfileStack = createStackNavigator();
 const ProfileStackScreen = () => (
   <ProfileStack.Navigator>
     <ProfileStack.Screen name="Profile" component={Profile} />
